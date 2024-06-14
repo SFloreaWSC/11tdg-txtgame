@@ -1,5 +1,15 @@
 print("DEV START OF GAME")
 
+#-----FUNCTIONS-----
+
+#-----MAIN CODE-----
+print("WARNING: This game includes descriptions of graphic violence, & animal cruelty & is not suitable for children below the age of 13")
+play=input("do you still wish to play this game?").lower()
+if play =="yes":
+    print("the game")
+else:
+    print("Sorry you dont wanna play the game I guess")
+
 #while True:
 
 #   Safe space (1)
