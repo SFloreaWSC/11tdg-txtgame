@@ -8,7 +8,8 @@ NAME2 = ["River", "Pond", "Forest", "Clearing", "Pathway", "Cave", "Grave", "Sta
 
 #-----MAIN CODE-----
 enc=0
-print("WARNING: This game includes descriptions of graphic violence, & animal cruelty & is not suitable for children below the age of 13")
+print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is is not suitable for children below the age of 13")
+print("Also none of the actions depicted in this game should actually be done")
 play=input("do you still wish to play this game?").lower()
 if play =="yes".lower():
     print("You were on a path through the woods, a cool breeze carried the scent of pine needles through the air")
