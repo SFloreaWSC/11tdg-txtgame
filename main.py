@@ -8,13 +8,19 @@ ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
 #------end of lists------
 #-----FUNCTIONS-----
-
+def checkstats():
+    
+    return
+    print(f"Your health is {health}")
+    print(f"Your attack is {attack}")
+    print(f"Your defense is {defense}")
 #-----MAIN CODE-----
 encon = 8
 moon = 0
 health = 100
 attack = 10
 defense = 5
+checkstats()
 print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
 print("Also none of the actions depicted in this game should actually be done")
 play=input("do you still wish to play this game?").lower()
@@ -37,22 +43,25 @@ if play == "yes":
             if "enter" in opt or "store" in opt:
                 sto = "yes"
                 print("Blah blah blah I have wares and services, for a price of course. But you may only have one, must leave some for others you know")
-                print(f"An elixer of health, for {random.randint(5,20)} coins.")
-                print(f"I can sharpen your weapon {random.randint(5,20)} coins.")
-                print(f"A patch for your garments {random.randint(5,20)} coins.")
+                one = random.randint(5,20)
+                two = random.randint(9,20)
+                three =  random.randint(9,20)
+                print(f"An elixer of health, for {one} coins.")
+                print(f"I can sharpen your weapon {two} coins.")
+                print(f"A patch for your garments {three} coins.")
                 while sto == "yes":
                     buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
-                    if "elixer" in buy or "health" in buy or "healing" in buy:
+                    if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
                         print("You pay the man and drink his elixer, as you do you feel QWERTY")
-                        health += random.randint(30,50)
+                        health += random.randint(20,50)
                         print("You store exit")
                         break
-                    elif "sharpen" in buy or "weapon" in buy:
+                    elif "sharpen" in buy or "weapon" in buy and moon <= two:
                         print("You give him the money and the merchant takes your weapon and sharpens it on a large stone block.")
-                        attack += random.randint(10,20)
+                        attack += random.randint(5,10)
                         print("You store exit")
                         break
-                    elif "patch" in buy or "garments" in buy:
+                    elif "patch" in buy or "garments" in buy and moon <= three:
                         print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
                         defense += random.randint(5,10)
                         print("You store exit")
@@ -76,7 +85,7 @@ if play == "yes":
             turn = random.randint(1,4)
             if turn >= 2:    
                 print("You approach the bat, it clearly isn't happy to see you.")
-                aorr = ("Should you make an attack or run away?")
+                aorr = input("Should you make an attack or run away?").lower()
                 if "run" in aorr:
                     print("You attempt to run away.")
                     running = random.randint(1,10)
