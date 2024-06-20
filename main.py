@@ -9,18 +9,19 @@ DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
 #------end of lists------
 #-----FUNCTIONS-----
 def checkstats():
-    
-    return
-    print(f"Your health is {health}")
-    print(f"Your attack is {attack}")
-    print(f"Your defense is {defense}")
+    return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}")
 #-----MAIN CODE-----
 encon = 8
 moon = 0
 health = 100
 attack = 10
 defense = 5
-checkstats()
+pdamage = random.randint(attack-5,attack+5)
+print(pdamage)
+pdamage = random.randint(attack-5,attack+5)
+print(pdamage)
+pdamage = random.randint(attack-5,attack+5)
+print(pdamage)
 print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
 print("Also none of the actions depicted in this game should actually be done")
 play=input("do you still wish to play this game?").lower()
@@ -53,11 +54,13 @@ if play == "yes":
                     buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                     if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
                         print("You pay the man and drink his elixer, as you do you feel QWERTY")
+                        print(f"Your defense is now {defense}.")
                         health += random.randint(20,50)
                         print("You store exit")
                         break
                     elif "sharpen" in buy or "weapon" in buy and moon <= two:
                         print("You give him the money and the merchant takes your weapon and sharpens it on a large stone block.")
+                        print(f"Your attack is now {attack}.")
                         attack += random.randint(5,10)
                         print("You store exit")
                         break
