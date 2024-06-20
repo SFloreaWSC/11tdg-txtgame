@@ -4,6 +4,7 @@ import random
 NAME1 = ["Crystal", "Tranquil", "Gloomy", "Luminous", "Somber", "Crimson", "Jagged", "Dilapidated"]
 NAME2 = ["River", "Pond", "Forest", "Clearing", "Pathway", "Cave", "Grave", "Statue"]
 LOCT = ["store", "item", "enemy"]
+LOCD = []
 #end of lists
 #-----FUNCTIONS-----
 
@@ -14,12 +15,10 @@ print("WARNING: This game includes descriptions of graphic violence, and animal 
 print("Also none of the actions depicted in this game should actually be done")
 play=input("do you still wish to play this game?").lower()
 
-if play == "yes".lower():
-    slay = input("AAAAAAAA").lower()
-    print(slay)
+if play == "yes":
     print("You were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
-    print("you continued walking for a while until you ralised that you had got lost without noticing,")
-    print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
+    print("you continued walking for a while until you realised that you had got lost without noticing,")
+    print("after panicking for a moment, you managed to gather your thoughts before realising that you have to escape before nightfall")
     print("& so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back,")
     while enc>=8:
         print(f"You enter the {random.choice(NAME1)} {random.choice(NAME2)}.")
@@ -42,5 +41,5 @@ if play == "yes".lower():
 
 #   Enemy 
 else:
-    print("Sorry you dont wanna play the game I guess")
+    print("Sorry you don't wanna play the game I guess")
 
