@@ -2,82 +2,88 @@ import random
 
 #------lists--------
 NAME1 = ["Crystal", "Tranquil", "Gloomy", "Luminous", "Somber", "Crimson", "Jagged", "Dilapidated"]
-NAME2 = ["River", "Pond", "Forest", "Clearing", "Pathway", "Cave", "Grave", "Statue"]
+NAME2 = ["River", "Pond", "Forest", "Clearing", "Flowerbed", "Cave", "Grave", "Statue"]
 LOCT = ["store", "item"]
 ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
 #------end of lists------
 #-----FUNCTIONS-----
 def checkstats():
-    return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}")
+    return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
 #-----MAIN CODE-----
 encon = 8
 moon = 0
 health = 100
 attack = 10
 defense = 5
-pdamage = random.randint(attack-5,attack+5)
-print(pdamage)
-pdamage = random.randint(attack-5,attack+5)
-print(pdamage)
-pdamage = random.randint(attack-5,attack+5)
-print(pdamage)
 print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
 print("Also none of the actions depicted in this game should actually be done")
-play=input("do you still wish to play this game?").lower()
+play=input("do you still wish to play this game? ").lower()
 
 if play == "yes":
-    print("You were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
+    print("\nYou were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
     print("you continued walking for a while until you ralised that you had got lost without noticing,")
     print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
-    print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back,")
+    print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back.\n")
     
     while encon >= 8:
-        print(f"You approach the {random.choice(NAME1)} {random.choice(NAME2)}.")
+        nam1 = random.choice(NAME1)
+        nam2 = random.choice(NAME2)
+        print(f"You approach the {nam1} {nam2}.")
         location = random.choice(LOCT)
         while location == "store":
             print("As you walk down the path, you come across a store.")
-            opt = input("Enter store or Continue down path\n").lower()
-            if "continue" in opt or "path" in opt:
-                print("You decide not to enter store you condtinue down the path")
+            while location == "store":
+                opt = input("Enter store, Continue down path, or Check your stats?\n").lower()
+                if "stat" in opt or "check" in opt:
+                    checkstats()
+                if "continue" in opt or "path" in opt:
+                    print("You decide not to enter store you continue down the path")
+                    break
+                if "enter" in opt or "store" in opt:
+                    sto = "yes"
+                    print("Blah blah blah I have wares and services, for a price of course. But you may only have one, must leave some for others you know")
+                    one = random.randint(5,20)
+                    two = random.randint(9,20)
+                    three =  random.randint(9,20)
+                    print(f"An elixer of health, for {one} coins.")
+                    print(f"I can sharpen your weapon {two} coins.")
+                    print(f"A patch for your garments {three} coins.")
+                    while sto == "yes":
+                        buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
+                        if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
+                            print("You pay the man and drink his elixer, as you do you feel QWERTY")
+                            print(f"Your defense is now {defense}.")
+                            health += random.randint(20,50)
+                            print("You store exit")
+                            break
+                        elif "sharpen" in buy or "weapon" in buy and moon <= two:
+                            print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
+                            attack += random.randint(5,10)
+                            print("You store exit")
+                            break
+                        elif "patch" in buy or "garments" in buy and moon <= three:
+                            print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
+                            defense += random.randint(5,10)
+                            print("You store exit")
+                            break
+                        elif "leave" in buy:
+                            abcd = input("You give your regards as you exit the man's store.\nContinue down path or Check stats?\n").lower()
+                            if "stat" in abcd or "check" in abcd:
+                                checkstats()
+                                break
+                            if "continue" in abcd or "path" in abcd:
+                                print("INSERT CONTINUE DOWN PATH TEXT HERE KIT")
+                        else:
+                            print("You sit there, confused by choice.")
                 break
-            if "enter" in opt or "store" in opt:
-                sto = "yes"
-                print("Blah blah blah I have wares and services, for a price of course. But you may only have one, must leave some for others you know")
-                one = random.randint(5,20)
-                two = random.randint(9,20)
-                three =  random.randint(9,20)
-                print(f"An elixer of health, for {one} coins.")
-                print(f"I can sharpen your weapon {two} coins.")
-                print(f"A patch for your garments {three} coins.")
-                while sto == "yes":
-                    buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
-                    if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
-                        print("You pay the man and drink his elixer, as you do you feel QWERTY")
-                        print(f"Your defense is now {defense}.")
-                        health += random.randint(20,50)
-                        print("You store exit")
-                        break
-                    elif "sharpen" in buy or "weapon" in buy and moon <= two:
-                        print("You give him the money and the merchant takes your weapon and sharpens it on a large stone block.")
-                        print(f"Your attack is now {attack}.")
-                        attack += random.randint(5,10)
-                        print("You store exit")
-                        break
-                    elif "patch" in buy or "garments" in buy and moon <= three:
-                        print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
-                        defense += random.randint(5,10)
-                        print("You store exit")
-                        break
-                    elif "leave" in buy:
-                        print("You give your regards as you exit the man's store. There seems to be no choice other than to continue down the path, and so you do just that.")
-                        break
-                    else:
-                        print("You sit there, confused by choice.")
-                break
+            break
         while location == "item":
             #item stuff
-            print("slay")
+            print(f"As you walk down the path you notice something peaking out from the {nam2}")
+            if "Pond" in nam2 or "River" in nam2
+
+            break
         encon -= 1
 
         #Enemy 
