@@ -27,8 +27,11 @@ if play == "yes":
             #store stuff
             print("you come across store")
             opt = input("Enter store or Continue down path").lower()
-            if opt == "enter":
-                print("slauy")
+            if opt == "enter" or opt == "enter store":
+                pri = random.randint(50,100)
+                print(f"Item 1 healing {pri} coins")
+                print(f"item 2 attack {pri} coins")
+                print(f"item 3 defence {pri} coins")
         elif location == "item":
             #item stuff
             print("slay")
