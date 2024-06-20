@@ -8,12 +8,13 @@ ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
 #------end of lists------
 #-----FUNCTIONS-----
-def getenemy():
-    return random.choice(ENE)
+
 #-----MAIN CODE-----
-enc = 8
+encon = 8
 moon = 0
 health = 100
+attack = 10
+defense = 5
 print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
 print("Also none of the actions depicted in this game should actually be done")
 play=input("do you still wish to play this game?").lower()
@@ -24,7 +25,7 @@ if play == "yes":
     print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
     print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back,")
     
-    while enc>=8:
+    while encon >= 8:
         print(f"You approach the {random.choice(NAME1)} {random.choice(NAME2)}.")
         location = random.choice(LOCT)
         while location == "store":
@@ -43,17 +44,17 @@ if play == "yes":
                     buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                     if "elixer" in buy or "health" in buy or "healing" in buy:
                         print("You pay the man and drink his elixer, as you do you feel QWERTY")
-                        health =+ random.randint(30,50)
+                        health += random.randint(30,50)
                         print("You store exit")
                         break
                     elif "sharpen" in buy or "weapon" in buy:
                         print("You give him the money and the merchant takes your weapon and sharpens it on a large stone block.")
-                        attack =+ random.randint(10,20)
+                        attack += random.randint(10,20)
                         print("You store exit")
                         break
                     elif "patch" in buy or "garments" in buy:
                         print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
-                        defense =+ random.randint(10,20)
+                        defense += random.randint(5,10)
                         print("You store exit")
                         break
                     elif "leave" in buy:
@@ -65,12 +66,45 @@ if play == "yes":
         while location == "item":
             #item stuff
             print("slay")
+        encon -= 1
 
         #Enemy 
-        echo = getenemy()
+        echo = random.choice(ENE)
         print(f"As you walk there appeasrs {random.choice(DES)} looking {echo}.")
+        while "Bat" in echo:
+            ehealth = random.randint(20,30)
+            turn = random.randint(1,4)
+            if turn >= 2:    
+                print("You approach the bat, it clearly isn't happy to see you.")
+                aorr = ("Should you make an attack or run away?")
+                if "run" in aorr:
+                    print("You attempt to run away.")
+                    running = random.randint(1,10)
+                    if running == 1:
+                        break
+                    if running >= 2:
+                        turn = 1
+                if "attack" in aorr:
+                    pdamage = random.randint(attack-5,attack+5)
+                    print(f"You attack the bat, dealing {pdamage}")
+            if turn == 1:
+                edamage = random.randint(10,15)
+                print(f"The bat ambushes you, your health lowers by {edamage}")
+                health -= 1
 
+                break
+        while "Chamois" in echo:
+            print("chamois")
+            break
+        while "Lynx" in echo:
+            print("lynx")
+            break
+        while "Wolf" in echo:
+            print("wolf")
+            break
+        encon -= 1
 
+    #BOSSFIGHT HERE
 
 else:
     print("Sorry you don't wanna play the game I guess")
