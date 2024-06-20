@@ -50,5 +50,5 @@ if play == "yes":
         print("As you walk there appeasrs an enemtny")
 
 else:
-    print("Sorry you dont wanna play the game I guess")
+    print("Sorry you don't wanna play the game I guess")
 
