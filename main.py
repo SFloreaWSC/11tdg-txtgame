@@ -112,7 +112,7 @@ if play == "yes":
 
                 break
         while "Chamois" in echo:
-            print("chamois")
+            print("chamois ")
             break
         while "Lynx" in echo:
             print("lynx")
