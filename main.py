@@ -29,7 +29,7 @@ while notno==True:
             print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
             print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back.\n")
             
-            while encon >= 8:
+            while encon > 0:
                 nam1 = random.choice(NAME1)
                 nam2 = random.choice(NAME2)
                 print(f"You approach the {nam1} {nam2}.")
@@ -84,7 +84,13 @@ while notno==True:
                 while location == "item":
                     #item stuff
                     print(f"As you walk down the path you notice something peaking out from the {nam2}")
-                    if "Pond" in nam2 or "River" in nam2
+                    if "Pond" in nam2 or "River" in nam2:
+                        print("placeholder")
+                    if "Statue" in nam2:
+                        print("placeholder")
+                    if "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2:
+                        print("placeholder")
+                        
 
                     break
                 encon -= 1
@@ -97,7 +103,7 @@ while notno==True:
                     turn = random.randint(1,4)
                     if turn >= 2:    
                         print("You approach the bat, it clearly isn't happy to see you.")
-                        aorr = input("Should you make an attack or run away?").lower()
+                        aorr = input("Should you make an attack or run away?\n").lower()
                         if "run" in aorr:
                             print("You attempt to run away.")
                             running = random.randint(1,10)
