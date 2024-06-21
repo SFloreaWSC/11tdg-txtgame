@@ -16,7 +16,6 @@ moon = 0
 health = 100
 attack = 10
 defense = 5
-turn = "x"
 
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
@@ -36,6 +35,7 @@ while notno==True:
             print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back.\n")
             
             while encon > 0:
+                turn  = "x"
                 nam1 = random.choice(NAME1)
                 nam2 = random.choice(NAME2)
                 print(f"You approach the {nam1} {nam2}.")
@@ -56,14 +56,14 @@ while notno==True:
                             two = random.randint(9,20)
                             three =  random.randint(9,20)
                             print(f"An elixer of health, for {one} coins.")
-                            print(f"I can sharpen your weapon {two} coins.")
-                            print(f"A patch for your garments {three} coins.")
+                            print(f"I can sharpen your weapon for {two} coins.")
+                            print(f"A patch for your garments for {three} coins.")
                             while sto == "yes":
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
                                     print("You pay the man and drink his elixer, as you do you feel QWERTY")
                                     print(f"Your defense is now {defense}.")
-                                    health += random.randint(20,50)
+                                    health += random.randint(20,40)
                                     print("You store exit")
                                     break
                                 elif "sharpen" in buy or "weapon" in buy and moon <= two:
@@ -95,7 +95,8 @@ while notno==True:
                     if "Statue" in nam2:
                         print("placeholder")
                     if "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2:
-                        print("placeholder")
+                        print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you pick up the said object and pick it up.")
+                        
                     break
                 encon -= 1
 
