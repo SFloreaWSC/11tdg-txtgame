@@ -1,12 +1,11 @@
 import random
 
-#------lists--------
+#------LISTS--------
 NAME1 = ["Crystal", "Tranquil", "Gloomy", "Luminous", "Somber", "Crimson", "Jagged", "Dilapidated"]
 NAME2 = ["River", "Pond", "Forest", "Clearing", "Flowerbed", "Cave", "Grave", "Statue"]
 LOCT = ["store", "item"]
 ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
-#------end of lists------
 #-----FUNCTIONS-----
 def checkstats():
     return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
@@ -17,13 +16,20 @@ moon = 0
 health = 100
 attack = 10
 defense = 5
+turn = "x"
+
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
     print("Also none of the actions depicted in this game should actually be done")
     play=input("do you still wish to play this game? ").lower()
-
-    if play == "yes":
+    if play=="no":
+        print("Sorry you don't wanna play the game I guess")
+        break
+    elif play!="yes" and play!='no':
+        print("it has to be yes or no")
+    elif play == "yes":
         while True:
+            
             print("\nYou were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
             print("you continued walking for a while until you ralised that you had got lost without noticing,")
             print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
@@ -90,8 +96,6 @@ while notno==True:
                         print("placeholder")
                     if "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2:
                         print("placeholder")
-                        
-
                     break
                 encon -= 1
 
