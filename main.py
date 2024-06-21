@@ -1,12 +1,11 @@
 import random
 
-#------lists--------
+#------LISTS--------
 NAME1 = ["Crystal", "Tranquil", "Gloomy", "Luminous", "Somber", "Crimson", "Jagged", "Dilapidated"]
 NAME2 = ["River", "Pond", "Forest", "Clearing", "Flowerbed", "Cave", "Grave", "Statue"]
 LOCT = ["store", "item"]
 ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
-#------end of lists------
 #-----FUNCTIONS-----
 def checkstats():
     return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
@@ -17,19 +16,27 @@ moon = 0
 health = 100
 attack = 10
 defense = 5
+turn = "x"
+
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
     print("Also none of the actions depicted in this game should actually be done")
     play=input("do you still wish to play this game? ").lower()
-
-    if play == "yes":
+    if play=="no":
+        print("Sorry you don't wanna play the game I guess")
+        break
+    elif play!="yes" and play!='no':
+        print("it has to be yes or no")
+    elif play == "yes":
         while True:
+            
             print("\nYou were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
             print("you continued walking for a while until you ralised that you had got lost without noticing,")
             print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
             print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back.\n")
             
-            while encon >= 8:
+            while encon > 0:
+                turn="x"
                 nam1 = random.choice(NAME1)
                 nam2 = random.choice(NAME2)
                 print(f"You approach the {nam1} {nam2}.")
@@ -84,8 +91,8 @@ while notno==True:
                 while location == "item":
                     #item stuff
                     print(f"As you walk down the path you notice something peaking out from the {nam2}")
-                    if "Pond" in nam2 or "River" in nam2
-
+                    if "Pond" in nam2 or "River" in nam2:
+                        print("placeholder")
                     break
                 encon -= 1
 
