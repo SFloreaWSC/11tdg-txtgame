@@ -30,7 +30,7 @@ while notno==True:
         while True:
             
             print("\nYou were on a path through the woods, a cool breeze carried the scent of pine needles through the air,")
-            print("you continued walking for a while until you ralised that you had got lost without noticing,")
+            print("you continued walking for a while until you realised that you had got lost without noticing,")
             print("after panicking for a moment, you managed to gather your thoughts and decide that you should first find a place to stay,")
             print("and so you set out into the woods, with nothing but your trusty knife in hand & the clothes on your back.\n")
             
@@ -41,9 +41,9 @@ while notno==True:
                 print(f"You approach the {nam1} {nam2}.")
                 location = random.choice(LOCT)
                 while location == "store":
-                    print("As you walk down the path, you come across a store.")
+                    print("As you walk down the path, you come across what appeared to be a rickety looking wagon with shuttered windows.")
                     while location == "store":
-                        opt = input("Enter store, Continue down path, or Check your stats?\n").lower()
+                        opt = input("Do you want to Enter store, Continue down path, or Check your stats?\n").lower()
                         if "stat" in opt or "check" in opt:
                             checkstats()
                         if "continue" in opt or "path" in opt:
@@ -51,7 +51,7 @@ while notno==True:
                             break
                         if "enter" in opt or "store" in opt:
                             sto = "yes"
-                            print("Blah blah blah I have wares and services, for a price of course. But you may only have one, must leave some for others you know")
+                            print("As you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go down for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind a counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, i hadn't noticed you with '")
                             one = random.randint(5,20)
                             two = random.randint(9,20)
                             three =  random.randint(9,20)
