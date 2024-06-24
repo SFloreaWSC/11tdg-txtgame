@@ -95,7 +95,7 @@ while notno==True:
                     if "Statue" in nam2:
                         print("placeholder")
                     if "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2:
-                        print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you pick up the said object and pick it up.")
+                        print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you walk to the said object and pick it up.")
                         
                     break
                 encon -= 1
