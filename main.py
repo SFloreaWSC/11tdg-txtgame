@@ -6,6 +6,7 @@ NAME2 = ["River", "Pond", "Forest", "Clearing", "Flowerbed", "Cave", "Grave", "S
 LOCT = ["store", "item"]
 ENE = ["Bat", "Chamois", "Lynx", "Gray Wolf"]
 DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
+ITE = ["Shield", "Weapon"]
 #-----FUNCTIONS-----
 def checkstats():
     return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
@@ -15,7 +16,7 @@ encon = 8
 moon = 0
 health = 100
 attack = 10
-defense = 5
+defense = 10
 
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
@@ -85,7 +86,7 @@ while notno==True:
                                     if "continue" in abcd or "path" in abcd:
                                         print("INSERT CONTINUE DOWN PATH TEXT HERE KIT")
                                 else:
-                                    print("You sit there, confused by choice.")
+                                    print("You stand there, confused by choice.")
                         break
                     break
                 while location == "item":
@@ -96,8 +97,34 @@ while notno==True:
                     if "Statue" in nam2:
                         print("placeholder")
                     if "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2:
-                        print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you walk to the said object and pick it up.")
-                        
+                        while True:
+                            print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you walk to the said object and pick it up.")
+                            itemblah = random.choice(ITE)
+                            print(f"It's a {itemblah}, which would clearly would be better than whatever you have now.")
+                            if itemblah == "Shield":
+                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \nDo you want to take it?\n")
+                            if itemblah == "Weapon":
+                                itempick == input("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \nDo you want to take it?\n")
+                            if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
+                                if itemblah == "Shield":
+                                    ite1 = random.randint(3-9)
+                                    defense += ite1
+                                    ite2 = random.randint(3-9)
+                                    attack -= ite2
+                                    print("higher def lower atk")
+                                if itemblah == "Weapon":
+                                    ite1 = random.randint(3-9)
+                                    attack += ite1
+                                    ite2 = random.randint(3-9)
+                                    defense -= ite2
+                                    print("lower def higher atk")
+                                break
+                            if "no" in itempick or "not" in itempick:
+                                print("placehodler")
+                                break
+                            else:
+                                "You sit there, confused by choice."
+                    input("It is time to move forward.")
                     break
                 encon -= 1
 
