@@ -39,7 +39,7 @@ while notno==True:
                 nam1 = random.choice(NAME1)
                 nam2 = random.choice(NAME2)
                 print(f"You approach the {nam1} {nam2}.")
-                location = random.choice(LOCT)
+                location = "store" #random.choice(LOCT)
                 while location == "store":
                     print("As you walk down the path, you come across what appeared to be a rickety looking wagon with shuttered windows.")
                     while location == "store":
@@ -51,17 +51,18 @@ while notno==True:
                             break
                         if "enter" in opt or "store" in opt:
                             sto = "yes"
-                            print("As you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go down for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind a counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, i hadn't noticed you with '")
+                            print("As you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go \n down for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind \n a counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, I hadn't noticed you there, sorry' he said, giving you a toothy grin. Then he started speaking again & said 'I offer a wide range of wares & services that you /n can purchase, if you have the coin of course' he paused for a moment, seemingly contemplating something & the  eventually said 'but you may only pick one from three, I have other customers & they cannot go without supplies' he then placed three different items on the table")
                             one = random.randint(5,20)
                             two = random.randint(9,20)
                             three =  random.randint(9,20)
-                            print(f"An elixer of health, for {one} coins.")
-                            print(f"I can sharpen your weapon for {two} coins.")
+                            print(f"You look skinny, I can offer you an elixir of health, for {one} coins to put some meat on your bones")
+                            print(f"That knife of yours looks rather dull, if you wish you may purchase a whetstone to sharpen it, but it is fragile & so will only work once. you can buy it for {two} coins.")
                             print(f"A patch for your garments for {three} coins.")
                             while sto == "yes":
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
-                                if "elixer" in buy or "health" in buy or "healing" in buy and moon <= one:
-                                    print("You pay the man and drink his elixer, as you do you feel QWERTY")
+                                # moon is money (for some reason)
+                                if "elixir" in buy or "health" in buy or "healing" in buy and moon <= one:
+                                    print("You pay the man and drink his elixir, as you do you feel QWERTY")
                                     print(f"Your defense is now {defense}.")
                                     health += random.randint(20,40)
                                     print("You store exit")
