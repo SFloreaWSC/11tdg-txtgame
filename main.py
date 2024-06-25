@@ -51,13 +51,13 @@ while notno==True:
                             break
                         if "enter" in opt or "store" in opt:
                             sto = "yes"
-                            print("As you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go \n down for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind \n a counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, I hadn't noticed you there, sorry' he said, giving you a toothy grin. Then he started speaking again & said 'I offer a wide range of wares & services that you /n can purchase, if you have the coin of course' he paused for a moment, seemingly contemplating something & the  eventually said 'but you may only pick one from three, I have other customers & they cannot go without supplies' he then placed three different items on the table")
+                            print("\nAs you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go \ndown for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind \na counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, I hadn't noticed you \nthere, sorry' he said, giving you a toothy grin. Then he started speaking again & said 'I offer a wide range of wares & services \nthat you can purchase, if you have the coin of course' he paused for a moment, seemingly contemplating something & eventually said \n'but you may only pick one from three, I have other customers & they cannot go without supplies' he then placed three different items on the table")
                             one = random.randint(5,20)
                             two = random.randint(9,20)
                             three =  random.randint(9,20)
                             print(f"You look skinny, I can offer you an elixir of health, for {one} coins to put some meat on your bones")
-                            print(f"That knife of yours looks rather dull, if you wish you may purchase a whetstone to sharpen it, but it is fragile & so will only work once. you can buy it for {two} coins.")
-                            print(f"A patch for your garments for {three} coins.")
+                            print(f"That knife of yours looks rather dull, if you wish you may purchase a whetstone to sharpen it, but it is fragile & so will only work once. you can buy it for {two} coins.") 
+                            print(f"Your clothes are ragged & while they will protect you from the elements they will offer little protection against other forces, i can offer you a patch for your garments for {three} coins.")
                             while sto == "yes":
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 # moon is money (for some reason)
