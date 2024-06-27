@@ -11,8 +11,13 @@ ITE = ["Shield", "Weapon"]
 def checkstats():
     return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
 #-----MAIN CODE-----
+boss=True
+poison=False
 notno=True
-encon = 8
+turn1=True
+#CHANGE THIS BACK ONCE DONE WITH BOSSFIGHT
+encon = 0
+#REMEMBER ITS THIS ONE
 moon = 0
 health = 100
 attack = 10
@@ -40,7 +45,7 @@ while notno==True:
                 nam1 = random.choice(NAME1)
                 nam2 = random.choice(NAME2)
                 print(f"You approach the {nam1} {nam2}.")
-                location = "store" #random.choice(LOCT)
+                location = random.choice(LOCT)
                 while location == "store":
                     print("As you walk down the path, you come across what appeared to be a rickety looking wagon with shuttered windows.")
                     while location == "store":
@@ -132,7 +137,7 @@ while notno==True:
 
                 #Enemy 
                 echo = random.choice(ENE)
-                print(f"As you walk there appeasrs {random.choice(DES)} looking {echo}.")
+                print(f"As you walk there appears {random.choice(DES)} looking {echo}.")
                 while "Bat" in echo:
                     ehealth = random.randint(20,30)
                     turn = random.randint(1,4)
@@ -167,9 +172,44 @@ while notno==True:
                 encon -= 1
 
             #BOSSFIGHT HERE
+            print("You had a sense that you were nearing the edge of the forest, & after walking forward for a few more minutes you saw a plume of smoke coming over the treeline, you quickly ran towards it & saw a log cabin with a disheveled looking man in front of it sharpening his knife. As he saw you approach he said 'ah, traveler, you finally found this place' he stood up from his chair & brandished his knife at you as you realised that he wasn't going to be helful towards you drew your knife & steeled your nerves, preparing for combat")
+            while boss == True:
+                bhealth=100
+                print("you noticed that the man appeared to stop for a moment as he daubed a strange fluid on his blade")
+                while bhealth>0:
+                    if poison==True:
+                        health-=5
+                        print("you feel the poison coursing through your veins & take 5 damage as a result of this")
+                        print(f"your health is currently {health}")
+                    print(f"your health is currently {health}")
+                    aod=input("would you like to attack him, or defend yourself").lower()
+                    if "attack" in aod and turn1==True:
+                        print("you took the opportunity to try & stab him in the gut")
+                        atkq=random.randint(1,2)
+                        if atkq==1:
+                                bdam=random.randint(attack-5,attack+5)
+                                print(f"you managed to slice a wide gash in his stomach, dealing {bdam} damage")
+                                print("after you attacked him he leaped back & started approaching for an attack")
+                                bayq=random.randint(1,5)
+                                if bayq==1:
+                                    print("he managed to make a long cut along your right arm, you feel immense pain as you realised the fluid his blade was coated in ")
+                        if atkq==2:
+                            print("you lunged towards him to try & attack, but he dodged to the side & tried to stab you with his knife")
+                            bayq=random.randint(1,3)
+                            if bayq==1:
+                                pdam=random.randint(health-5%-5,health-5%+5)
+                                print(f"he managed to stab his knife right into your back, dealing {pdam} damage")
+                                nhitless=1
+                                poison=True
+                        elif bayq!=1:
+                            print("he lunged towards you, raising his arms up to stab you as hard as he could, but missed & tumbled across the ground")
+                    elif "defend" in aod:
+                        print("you tried to grab a log off the ground & shield yourself with it")
+                        bayq=random.randint(1,8)
 
-    elif play=="no":
-        print("Sorry you don't wanna play the game I guess")
-    else:
-        print("it has ")
+
+                    
+            #BOSSFIGHT END
+            #END OF GAME
+   
 
