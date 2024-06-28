@@ -27,6 +27,7 @@ ehealth = 100
 edamage = 15
 randcoin = 10
 itempick = "slay"
+ehurt = 1
 
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
@@ -61,37 +62,39 @@ while notno==True:
                             break
                         elif "enter" in opt or "store" in opt:
                             sto = "yes"
-                            print("\nAs you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go \ndown for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind \na counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, I hadn't noticed you \nthere, sorry' he said, giving you a toothy grin. Then he started speaking again & said 'I offer a wide range of wares & services \nthat you can purchase, if you have the coin of course' he paused for a moment, seemingly contemplating something & eventually said \n'but you may only pick one from three, I have other customers & they cannot go without supplies' he then placed three different items on the table")
+                            print("\nAs you approached the Wagon the shutters suddenly flew open, causing you to jump back with a start, after letting your heartrate go \ndown for a moment you looked into the inky black window of the wagon & you saw what appeared to be the face of an old mam behind \na counter of sorts, after a moment or two he seemed to notice you & he said with a raspy voice 'oh, traveler, I hadn't noticed you \nthere, sorry' he said, giving you a toothy grin. Then he started speaking again & said 'I offer a wide range of wares & services \nthat you can purchase, if you have the coin of course' he paused for a moment, seemingly contemplating something & eventually said \n'but you may only pick one from three, I have other customers & they cannot go without supplies' he then placed three different items on the table\nye")
                             one = random.randint(5,20)
                             two = random.randint(9,20)
                             three =  random.randint(9,20)
                             print(f"You look skinny, I can offer you an elixir of health, for {one} coins to put some meat on your bones\n")
-                            print(f"That knife of yours looks rather dull, if you wish you may purchase a whetstone to sharpen it, but it is fragile & so will only work once. you can buy it for {two} coins.") 
-                            print(f"Your clothes are ragged & while they will protect you from the elements they will offer little protection against other forces, i can offer you a patch for your garments for {three} coins.")
+                            print(f"That knife of yours looks rather dull, if you wish you may purchase a whetstone to sharpen it, but it is fragile & so will only work once. you can buy it for {two} coins.\n") 
+                            print(f"Your clothes are ragged & while they will protect you from the elements they will offer little protection against other forces, I can offer you a patch for your garments for {three} coins.\n")
                             while sto == "yes":
                                 if "continue" in abcd:
                                     break
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 # moon is money (for some reason)
                                 if "elixir" in buy or "health" in buy or "healing" in buy and moon <= one:
-                                    print("You pay the man and drink his elixir, as you do you feel QWERTY")
+                                    print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
                                     health += random.randint(20,40)
                                     print(f"Your health is now {health}.")
                                     print("You store exit")
                                     break
-                                elif "sharpen" in buy or "weapon" in buy and moon <= two:
+                                if "sharpen" in buy or "weapon" in buy and moon <= two:
                                     print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
                                     attack += random.randint(5,10)
                                     print(f"Your attack is now {attack}.")
                                     print("You store exit")
                                     break
-                                elif "patch" in buy or "garments" in buy and moon <= three:
+                                if "patch" in buy or "garments" in buy and moon <= three:
                                     print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
                                     defense += random.randint(5,10)
                                     print(f"Your defense is now {defense}.")
                                     print("You store exit")
                                     break
-                                elif "leave" in buy:
+                                elif "leave" not in buy:
+                                    print("Sorry, that ain't enough money. Gotta price things fair y'know.")
+                                if "leave" in buy:
                                     print("You give your regards as you exit the man's store.")
                                     while "leave" in buy:
                                         abcd = input("Continue down path or Check stats?\n").lower()
@@ -170,7 +173,7 @@ while notno==True:
                             print(f"It's a {itemblah}, which would clearly would be better than whatever you have on your person now.")
                             if itemblah == "Shield":
                                 itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n")
-                            if itemblah == "Weapon":
+                            elif itemblah == "Weapon":
                                 itempick == input("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\nDo you want to take it?\n")
                             if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
                                 if itemblah == "Shield":
@@ -184,7 +187,7 @@ while notno==True:
                                     print("KIT PLACEHOLDET TEXT HERE")
                                     itemblah = "x"
                                 break
-                            if "no" in itempick or "not" in itempick:
+                            elif "no" in itempick or "not" in itempick:
                                 print("placehodler")
                                 break
                             else:
@@ -211,14 +214,13 @@ while notno==True:
                     ehealth = random.randint(75,85)
                     edamage = random.randint(20,30)
                     randcoin = random.randint(18,25)
-                print(f"As you walk there appeasrs {random.choice(DES)} looking {echo}.")
+                print(f"As you walk there appears {random.choice(DES)} looking {echo}.")
                 turn = random.randint(1,4)
                 print(f"You look at the {echo}, it clearly isn't happy to see you.")
+                
                 while True:
-                    print(f"As you walk there appears {random.choice(DES)} looking {echo}.")
+                    turn = random.randint(1,4)
                     while True:
-                        ehealth = random.randint(20,30)
-                        turn = random.randint(1,4)
                         if turn >= 2:    
                             print("It stares at you, you stare back.")
                             aorr = input("Should you make an Attack or Run away?\n").lower()
@@ -243,7 +245,7 @@ while notno==True:
                                 print(f"You take too long to decide and the {echo} decides to ambush you.")
                                 turn = 1
                         elif turn == 1:
-                            ehurt = random.randint(edamage-2,edamage+2)
+                            ehurt = random.randint(edamage-2,edamage+2) - random.randint(defense-5,defense+5)
                             print(f"The {echo} lunges at you, your health lowers by {ehurt}.\n")
                             health -= ehurt
                             if health <= 0:
@@ -251,8 +253,10 @@ while notno==True:
                                 while True:
                                     dead = "dead"
                             turn = 2
-                    print(f"PLACEHOLDER you defeat the enemy. You collect {randcoin} coins")
+                    print(f"PLACEHOLDER KIT you defeat the enemy. You collect {randcoin} coins.\n")
+                    moon += randcoin
                     encon -= 1
+                    break
 
             #BOSSFIGHT HERE
             print("You had a sense that you were nearing the edge of the forest, & after walking forward for a few more minutes you saw a plume of smoke coming over the treeline, you quickly ran towards it & saw a log cabin with a disheveled looking man in front of it sharpening his knife. As he saw you approach he said 'ah, traveler, you finally found this place' he stood up from his chair & brandished his knife at you as you realised that he wasn't going to be helful towards you drew your knife & steeled your nerves, preparing for combat")
