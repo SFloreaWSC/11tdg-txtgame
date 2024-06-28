@@ -29,6 +29,7 @@ edamage = 15
 randcoin = 10
 itempick = "slay"
 ehurt = 1
+fighthealth = 100
 
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
@@ -77,7 +78,7 @@ while notno==True:
                                 # moon is money (for some reason)
                                 if "elixir" in buy or "health" in buy or "healing" in buy and moon <= one:
                                     print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
-                                    health += random.randint(20,40)
+                                    health += random.randint(19,39)
                                     print(f"Your health is now {health}.")
                                     print("You store exit")
                                     break
@@ -220,6 +221,7 @@ while notno==True:
                 print(f"You look at the {echo}, it clearly isn't happy to see you.")
                 
                 while True:
+                    fighthealth = health
                     turn = random.randint(1,4)
                     while True:
                         if turn >= 2:    
@@ -248,8 +250,8 @@ while notno==True:
                         elif turn == 1:
                             ehurt = random.randint(edamage-2,edamage+2) - random.randint(defense-5,defense+5)
                             print(f"The {echo} lunges at you, your health lowers by {ehurt}.\n")
-                            health -= ehurt
-                            if health <= 0:
+                            fighthealth -= ehurt
+                            if fighthealth <= 0:
                                 endingdie()
                                 while True:
                                     dead = "dead"
@@ -262,7 +264,7 @@ while notno==True:
             #BOSSFIGHT HERE
             print("You had a sense that you were nearing the edge of the forest, & after walking forward for a few more minutes you saw a plume of smoke coming over the treeline, you quickly ran towards it & saw a log cabin with a disheveled looking man in front of it sharpening his knife. As he saw you approach he said 'ah, traveler, you finally found this place' he stood up from his chair & brandished his knife at you as you realised that he wasn't going to be helful towards you drew your knife & steeled your nerves, preparing for combat")
             while boss == True:
-                bhealth=100
+                bhealth = health
                 print("you noticed that the man appeared to stop for a moment as he daubed a strange fluid on his blade")
                 while bhealth>0:
                     if poison>0:
