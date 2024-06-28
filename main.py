@@ -11,8 +11,9 @@ ITE = ["Shield", "Weapon"]
 def checkstats():
     return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
 #-----MAIN CODE-----
+sdamage=20
 boss=True
-poison=False
+poison=0
 notno=True
 turn1=True
 #CHANGE THIS BACK ONCE DONE WITH BOSSFIGHT
@@ -177,7 +178,7 @@ while notno==True:
                 bhealth=100
                 print("you noticed that the man appeared to stop for a moment as he daubed a strange fluid on his blade")
                 while bhealth>0:
-                    if poison==True:
+                    if poison>0:
                         health-=5
                         print("you feel the poison coursing through your veins & take 5 damage as a result of this")
                         print(f"your health is currently {health}")
@@ -188,28 +189,47 @@ while notno==True:
                         atkq=random.randint(1,2)
                         if atkq==1:
                                 bdam=random.randint(attack-5,attack+5)
+                                bhealth=bhealth-bdam
                                 print(f"you managed to slice a wide gash in his stomach, dealing {bdam} damage")
+                                turn1=False
                                 print("after you attacked him he leaped back & started approaching for an attack")
                                 bayq=random.randint(1,5)
                                 if bayq==1:
-                                    print("he managed to make a long cut along your right arm, you feel immense pain as you realised the fluid his blade was coated in ")
+                                    pdam=random.randint(health-95%-5,health-95%+5)
+                                    print(f"he managed to make a long cut along your right arm dealing {pdam} damage")
+                                    poison+=1
+                                    if poison==1:
+                                        print("you felt immense pain as you realised that the fluid coating his blade was poison")
+                                if bayq!=1:
+                                    print("he tried to make an attack but missed & jumped back before you had another chance to hit him")
                         if atkq==2:
                             print("you lunged towards him to try & attack, but he dodged to the side & tried to stab you with his knife")
                             bayq=random.randint(1,3)
                             if bayq==1:
-                                pdam=random.randint(health-5%-5,health-5%+5)
+                                pdam=random.randint(health-95%-5,health-95%+5)
                                 print(f"he managed to stab his knife right into your back, dealing {pdam} damage")
-                                nhitless=1
-                                poison=True
+                                poison+=1
                         elif bayq!=1:
                             print("he lunged towards you, raising his arms up to stab you as hard as he could, but missed & tumbled across the ground")
                     elif "defend" in aod:
                         print("you tried to grab a log off the ground & shield yourself with it")
                         bayq=random.randint(1,8)
-
-
-                    
+                        if bayq==1:
+                            pdam=random.randint(health-95%-5,health-95%+5)
+                            print(f"despite you using the log to shield yourself, he managed to slice a small piece out of your cheek, dealing {pdamage}")
+                            poison+=1
+                            if poison==1:
+                                print("you felt yourself weaken as you realised that the fluid coating his blade was poison")
+                        if bayq!=1:
+                            shield=random.randint(10,20)
+                            sdamage=sdamage+shield
+                            bhealth=bhealth-sdamage
+                            print(f"his blade sunk deep into the log you were using to shield yourself, & as he tried to pull it free you pushed him to the ground & went in for a stab, dealing {sdamage}")
+                    elif bhealth<=0:
+                        break       
             #BOSSFIGHT END
+            print("you stood over the dead body of the man who attempted to kill you in triumph as you sat down for a moment to catch your breath, you realised that you might find something of use in his cabin, so you went in")
+            print("you went into his cabin & the first thing you saw was a map of the entire forest which you picked up & eventually left the forest, never to return again")
             #END OF GAME
    
 
