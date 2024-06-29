@@ -226,14 +226,14 @@ while notno==True:
                     while True:
                         if turn >= 2:    
                             print("It stares at you, you stare back.")
-                            aorr = input("Should you make an Attack or Run away?\n").lower()
+                            aorr = input("Should you make an Attack, Run away, or Check your stats?\n").lower()
                             if "run" in aorr:
                                 print("You attempt to run away.")
                                 running = random.randint(1,10)
                                 if running == 1:
                                     print("You succesfully run KIT PLACEHOLDER")
                                     break
-                                if running >= 2:
+                                elif running >= 2:
                                     turn = 1
                             elif "attack" in aorr:
                                 pdamage = random.randint(attack-2,attack+5)
