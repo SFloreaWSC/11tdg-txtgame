@@ -80,21 +80,21 @@ while notno==True:
                                     print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
                                     health += random.randint(19,39)
                                     print(f"Your health is now {health}.")
-                                    print("You store exit")
+                                    input("It is time to continue.")
                                     break
                                 if "sharpen" in buy or "weapon" in buy and moon >= two:
                                     print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
                                     attack += random.randint(5,9)
                                     print(f"Your attack is now {attack}.")
-                                    print("You store exit")
+                                    input("It is time to continue.")
                                     break
                                 if "patch" in buy or "garments" in buy and moon >= three:
                                     print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
                                     defense += random.randint(5,9)
                                     print(f"Your defense is now {defense}.")
-                                    print("You store exit")
+                                    input("It is time to continue.")
                                     break
-                                elif "leave" not in buy:
+                                else:
                                     print("Sorry, that ain't enough money. Gotta price things fair y'know.")
                                 if "leave" in buy:
                                     print("You give your regards as you exit the man's store.")
