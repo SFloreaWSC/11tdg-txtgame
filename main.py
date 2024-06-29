@@ -22,7 +22,7 @@ encon = 8
 moon = 0
 health = 100
 attack = 10
-defense = 10
+defense = 5
 abcd = "x"
 ehealth = 100
 edamage = 15
@@ -84,13 +84,13 @@ while notno==True:
                                     break
                                 if "sharpen" in buy or "weapon" in buy and moon <= two:
                                     print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
-                                    attack += random.randint(5,10)
+                                    attack += random.randint(5,9)
                                     print(f"Your attack is now {attack}.")
                                     print("You store exit")
                                     break
                                 if "patch" in buy or "garments" in buy and moon <= three:
                                     print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
-                                    defense += random.randint(5,10)
+                                    defense += random.randint(5,9)
                                     print(f"Your defense is now {defense}.")
                                     print("You store exit")
                                     break
@@ -249,7 +249,11 @@ while notno==True:
                                 turn = 1
                         elif turn == 1:
                             ehurt = random.randint(edamage-2,edamage+2) - random.randint(defense-5,defense+5)
-                            print(f"The {echo} lunges at you, your health lowers by {ehurt}.\n")
+                            if ehurt < 0:
+                                ehurt = 0
+                                print(f"{echo} lunges at you, but isn't able to hurt you due to your defenses.")
+                            else:
+                                print(f"The {echo} lunges at you, your health lowers by {ehurt}.\n")
                             fighthealth -= ehurt
                             if fighthealth <= 0:
                                 endingdie()
