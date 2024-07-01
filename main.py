@@ -138,7 +138,7 @@ while notno==True:
                                     itemblah = "x"
                                 break
                             elif "no" in itempick or "not" in itempick:
-                                print("PLACEHOLDER KIT")
+                                input()
                                 break
                             else:
                                 print("You sit there, confused by choice.")
@@ -183,7 +183,7 @@ while notno==True:
                                     attack -= random.randint(2,5)
                                     print("KIT PLACEHOLDET TEXT HERE")
                                     itemblah = "x"
-                                if itemblah == "Weapon":
+                                elif itemblah == "Weapon":
                                     attack += random.randint(2,5)
                                     defense -= random.randint(2,5)
                                     print("KIT PLACEHOLDET TEXT HERE")
@@ -319,7 +319,7 @@ while notno==True:
                             bhealth=bhealth-sdamage
                             print(f"his blade sunk deep into the log you were using to shield yourself, & as he tried to pull it free you pushed him to the ground & went in for a stab, dealing {sdamage}")
                     elif bhealth<=0:
-                        break            
+                        break           
             #BOSSFIGHT END - ISSAC'S TASK
             #END OF GAME
    
