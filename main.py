@@ -76,19 +76,19 @@ while notno==True:
                                     break
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 # moon is money (for some reason)
-                                if "elixir" in buy or "health" in buy or "healing" in buy and moon >= one1:
+                                if "elixir" in buy or "health" in buy or "healing" in buy and one1 <= moon:
                                     print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
                                     health += random.randint(20,30)
                                     print(f"Your health is now {health}.")
                                     input("It is time to continue.")
                                     break
-                                elif "sharpen" in buy or "weapon" in buy and moon >= two2:
+                                elif "sharpen" in buy or "weapon" in buy and two2 <= moon:
                                     print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
                                     attack += random.randint(5,9)
                                     print(f"Your attack is now {attack}.")
                                     input("It is time to continue.")
                                     break
-                                elif "patch" in buy or "garments" in buy and moon >= three3:
+                                elif "patch" in buy or "garments" in buy and three3 <= moon:
                                     print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
                                     defense += random.randint(5,9)
                                     print(f"Your defense is now {defense}.")
@@ -122,16 +122,16 @@ while notno==True:
                             itemblah = random.choice(ITE)
                             print(f"It's a {itemblah}, which would clearly would be better than whatever you have on your person now.")
                             if itemblah == "Shield":
-                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n")
+                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower
                             elif itemblah == "Weapon":
-                                itempick == input("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\nDo you want to take it?\n")
+                                itempick == input("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\nDo you want to take it?\n").lower()
                             if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
                                 if itemblah == "Shield":
                                     defense += random.randint(2,5)
                                     attack -= random.randint(2,5)
                                     print("KIT PLACEHOLDET TEXT HERE")
                                     itemblah = "x"
-                                if itemblah == "Weapon":
+                                elif itemblah == "Weapon":
                                     attack += random.randint(2,5)
                                     defense -= random.randint(2,5)
                                     print("KIT PLACEHOLDET TEXT HERE")
@@ -204,15 +204,15 @@ while notno==True:
                     ehealth = random.randint(15,25)
                     edamage = random.randint(10,15)
                     randcoin = random.randint(5,10)
-                if echo == "Chamois":
+                elif echo == "Chamois":
                     ehealth = random.randint(35,45)
                     edamage = random.randint(15,20)
                     randcoin = random.randint(7,15)
-                if echo == "Lynx":
+                elif echo == "Lynx":
                     ehealth = random.randint(55,65)
                     edamage = random.randint(20,25)
                     randcoin = random.randint(10,20)
-                if echo == "Wolf":
+                elif echo == "Wolf":
                     ehealth = random.randint(75,85)
                     edamage = random.randint(20,30)
                     randcoin = random.randint(18,25)
@@ -249,7 +249,7 @@ while notno==True:
                                 turn = 1
                         elif turn == 1:
                             ehurt = random.randint(edamage-2,edamage+2) - random.randint(defense-5,defense+5)
-                            if ehurt < 0:
+                            if ehurt <= 0:
                                 ehurt = 0
                                 print(f"{echo} lunges at you, but isn't able to hurt you due to your defenses.")
                             else:
