@@ -187,14 +187,14 @@ while notno==True:
                             else:
                                 print("You sit there, confused by choice.")
                         if itemblah == "Weapon":
-                            print("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\n")
-                            itempick == input("Do you want to take it?\n").lower()
+                            itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                             if itempick == "yes":
                                 attack += random.randint(2,5)
                                 defense -= random.randint(2,5)
                                 if defense < 0:
                                     defense = 0
                                 print("KIT PLACEHOLDER TEXT HERE")
+                                input("It's time to move forward.")
                                 break
                             elif itempick == "no":
                                 print("You decide not to keep it.")
@@ -283,7 +283,7 @@ while notno==True:
                                 elif running >= 2:
                                     turn = 1
                             elif "attack" in aorr:
-                                pdamage = random.randint(attack-2,attack+5)
+                                pdamage = random.randint(attack-2,attack+4)
                                 print(f"You attack the {echo}, dealing {pdamage} damage.\n")
                                 ehealth -= pdamage
                                 if ehealth <= 0:
@@ -295,7 +295,7 @@ while notno==True:
                                 print(f"You take too long to decide and the {echo} decides to ambush you.")
                                 turn = 1
                         elif turn == 1:
-                            ehurt = random.randint(edamage-2,edamage+2) - random.randint(defense-3,defense+3)
+                            ehurt = random.randint(edamage,edamage+2) - random.randint(defense-2,defense+2)
                             if ehurt <= 0:
                                 ehurt = 0
                                 print(f"{echo} lunges at you, but isn't able to hurt you due to your defenses.")
