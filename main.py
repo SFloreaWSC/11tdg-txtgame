@@ -77,17 +77,23 @@ while notno==True:
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 # moon is money (for some reason)
                                 if "elixir" in buy or "health" in buy or "healing" in buy and one1 <= moon:
-                                    print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
-                                    health += random.randint(10,25)
-                                    print(f"Your health is now {health}.")
-                                    input("It is time to continue.")
-                                    break
+                                    if one1 >= moon:
+                                        print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
+                                        health += random.randint(10,25)
+                                        print(f"Your health is now {health}.")
+                                        input("It is time to continue.")
+                                        break
+                                    else:
+                                        print("Sorry, that ain't enough money. You know how it is, gotta price things fair.\n")
                                 elif "sharpen" in buy or "weapon" in buy and two2 <= moon:
-                                    print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
-                                    attack += random.randint(5,9)
-                                    print(f"Your attack is now {attack}.")
-                                    input("It is time to continue.")
-                                    break
+                                    if two2 >= moon:
+                                        print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
+                                        attack += random.randint(5,9)
+                                        print(f"Your attack is now {attack}.")
+                                        input("It is time to continue.")
+                                        break
+                                    else:
+                                        print("Sorry, that ain't enough money. You know how it is, gotta price things fair.\n")
                                 elif "patch" in buy or "garments" in buy:
                                     if moon >= three3:
                                         print("As you hand him the coins he takes a sewing kit from below his table and sews a large patch to the chest of your garments.")
@@ -95,6 +101,8 @@ while notno==True:
                                         print(f"Your defense is now {defense}.")
                                         input("It is time to continue.")
                                         break
+                                    else:
+                                        print("Sorry, that ain't enough money. You know how it is, gotta price things fair.\n")
                                 else:
                                     print("You sit there, confused by choice.")
                                 if "leave" in buy:
