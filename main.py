@@ -30,6 +30,8 @@ randcoin = 10
 itempick = "slay"
 ehurt = 1
 fighthealth = 100
+itempick = "x"
+itemblah = "x"
 
 while notno==True:
     print("WARNING: This game includes descriptions of graphic violence, and animal cruelty so it is not suitable for children below the age of 13")
@@ -126,20 +128,20 @@ while notno==True:
                     break
                 while location == "item":
                     #item stuff
-                    print(f"As you walk down the path you notice something peaking out from the {nam2}")
-                    if "Pond" in nam2 or "River" in nam2:
-                        while True:
-                            print(f"You walk towards the {nam2}, noticing something inside of it. As you walk around the {nam2} you approach the said object and pick it up.")
+                    while True:
+                        if "Pond" in nam2 or "River" in nam2:
+                            print(f"You walk towards the {nam2}, noticing something inside of it. As you walk into the {nam2} you approach the said object and pick it up.")
                             itemblah = random.choice(ITE)
                             print(f"It's a {itemblah}, which would clearly would be better than whatever you have on your person now.")
                             if itemblah == "Shield":
+                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                 if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
-                                    itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                     defense += random.randint(2,5)
                                     attack -= random.randint(2,5)
                                     if attack < 0:
                                         attack = 0
                                     print("KIT PLACEHOLDER TEXT HERE")
+                                    input("It's time to move forward")
                                     break
                                 elif "no" in itempick or "not" in itempick:
                                     print("you decide not to keep it.")
@@ -155,6 +157,7 @@ while notno==True:
                                     if defense < 0:
                                         defense = 0
                                     print("KIT PLACEHOLDER TEXT HERE")
+                                    input("It's time to move forward")
                                     break
                                 elif "no" in itempick or "not" in itempick:
                                     print("you decide not to keep it.")
@@ -162,15 +165,14 @@ while notno==True:
                                     break
                                 else:
                                     print("You sit there, confused by choice.")
-                        
-                    elif "Statue" in nam2 or "Grave" in nam2:
-                        while True:
+
+                        elif "Statue" in nam2 or "Grave" in nam2:
                             print(f"\nYou walk towards the {nam2}, noticing something behind it. As you walk around the {nam2} you approach the said object and pick it up.")
                             itemblah = random.choice(ITE)
                             print(f"It's a {itemblah}, which would clearly would be better than whatever you have on your person now.")
                             if itemblah == "Shield":
+                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                 if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
-                                    itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                     defense += random.randint(2,5)
                                     attack -= random.randint(2,5)
                                     if attack < 0:
@@ -199,14 +201,13 @@ while notno==True:
                                 else:
                                     print("You sit there, confused by choice.")
                                     
-                    elif "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2 or "Clearing" in nam2:
-                        while True:
+                        elif "Forest" in nam2 or "Flowerbed" in nam2 or "Cave" in nam2 or "Clearing" in nam2:
                             print(f"You walk towards the {nam2}, noticing something inside. As you enter the {nam2} you approach the said object and pick it up.")
                             itemblah = random.choice(ITE)
                             print(f"It's a {itemblah}, which would clearly would be better than whatever you have on your person now.")
                             if itemblah == "Shield":
+                                itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                 if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
-                                    itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                                     defense += random.randint(2,5)
                                     attack -= random.randint(2,5)
                                     if attack < 0:
