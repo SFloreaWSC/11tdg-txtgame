@@ -150,14 +150,14 @@ while notno==True:
                             else:
                                 print("You sit there, confused by choice.")
                         if itemblah == "Weapon":
-                            print("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\n")
-                            itempick == input("Do you want to take it?\n").lower()
+                            itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                             if itempick == "yes":
                                 attack += random.randint(2,5)
                                 defense -= random.randint(2,5)
                                 if defense < 0:
                                     defense = 0
                                 print("KIT PLACEHOLDER TEXT HERE")
+                                input("It's time to move forward.")
                                 break
                             elif itempick == "no":
                                 print("You decide not to keep it.")
@@ -224,14 +224,14 @@ while notno==True:
                             else:
                                 print("You sit there, confused by choice.")
                         if itemblah == "Weapon":
-                            print("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\n")
-                            itempick == input("Do you want to take it?\n").lower()
+                            itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n").lower()
                             if itempick == "yes":
                                 attack += random.randint(2,5)
                                 defense -= random.randint(2,5)
                                 if defense < 0:
                                     defense = 0
                                 print("KIT PLACEHOLDER TEXT HERE")
+                                input("It's time to move forward.")
                                 break
                             elif itempick == "no":
                                 print("You decide not to keep it.")
