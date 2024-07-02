@@ -9,7 +9,7 @@ DES = ["an imposing", "a threatening", "a concerning", "a worrisome"]
 ITE = ["Shield", "Weapon"]
 #-----FUNCTIONS-----
 def checkstats():
-    return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\n")
+    return print(f"Your health is {health}\nYour attack is {attack}\nYour defense is {defense}\nYou have {moon} coins.\n")
 def endingdie():
     return print("You suddenly become acutely aware of the mass amount of pain coursing through your body. \nYou can feel it pulsing through your veins. Pure, unadulterated agony. \nYour legs give way and you collapse, unable to even try to move. \nThe animals in the forest surrounding you take notice, approaching you, they start to dig into your flesh with their razor sharp teeth. \nYour entire existence acting as nothing more than a snack for them. \n\nYou never should have come here.")
 #-----MAIN CODE-----
@@ -77,7 +77,7 @@ while notno==True:
                                 buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
                                 # moon is money (for some reason)
                                 if "elixir" in buy or "health" in buy or "healing" in buy and one1 <= moon:
-                                    if one1 >= moon:
+                                    if moon >= one1:
                                         print("You pay the man and drink his elixir, as you do you feel PLACEHOLDER KIT")
                                         health += random.randint(10,25)
                                         print(f"Your health is now {health}.")
@@ -86,7 +86,7 @@ while notno==True:
                                     else:
                                         print("Sorry, that ain't enough money. You know how it is, gotta price things fair.\n")
                                 elif "sharpen" in buy or "weapon" in buy and two2 <= moon:
-                                    if two2 >= moon:
+                                    if moon >= two2:
                                         print(f"You give him the money and the merchant takes your weapon and sharpens it on a large stone block.\nYour attack is now {attack}.")
                                         attack += random.randint(5,9)
                                         print(f"Your attack is now {attack}.")
@@ -151,7 +151,7 @@ while notno==True:
                                     itemblah = "x"
                                 break
                             elif "no" in itempick or "not" in itempick:
-                                input()
+                                input("It's time to move forward")
                                 break
                             else:
                                 print("You sit there, confused by choice.")
@@ -164,7 +164,7 @@ while notno==True:
                                 itempick = input("The shield might up your defense, but it would make it harder to attack and lower your attack. \n\nDo you want to take it?\n")
                             elif itemblah == "Weapon":
                                 itempick == input("This weapon may give you a higher attack damage, but you'd have to be more free to move to do so, so you'd have to get rid of some of your protective gear. \n\nDo you want to take it?\n")
-                            if "yes" in itempick or "yeah" in itempick or "ok" in itempick:
+                            if "yes" in itempick or "yeah" in itempick:
                                 if itemblah == "Shield":
                                     defense += random.randint(2,5)
                                     attack -= random.randint(2,5)
