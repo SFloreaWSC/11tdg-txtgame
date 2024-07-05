@@ -77,7 +77,7 @@ while notno==True:
                             while sto == "yes":
                                 if "continue" in abcd:
                                     break
-                                buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
+                                buy = input("Would you like to purchase any of my items?\n").lower()
                                 # moon is money (for some reason) {I would explain it, Williams, but it would take far too long}
                                 if "elixir" in buy or "health" in buy or "healing" in buy and one1 <= moon:
                                     if moon >= one1:
