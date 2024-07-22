@@ -81,7 +81,7 @@ while notno==True:
                             while sto == "yes":
                                 if "continue" in abcd:
                                     break
-                                buy = input("Would you like to purchase any of my items? Or just leave without buying anything.\n").lower()
+                                buy = input("Would you like to purchase any of my items?\n").lower()
                                 # moon is money (for some reason) {I would explain it, Williams, but it would take far too long}
                                 if "elixir" in buy or "health" in buy or "healing" in buy:
                                     if moon >= one1:
@@ -263,9 +263,9 @@ while notno==True:
                     if poison>0:
                         health-=5
                         print("you feel the poison coursing through your veins & take 5 damage as a result of this")
-                        print(f"your health is currently {health}")
                     print(f"your health is currently {health}")
-                    aod=input("would you like to attack him, or defend yourself").lower()
+                    print(f"the bosses health is {bhealth}")
+                    aod=input("would you like to attack him, or defend yourself ").lower()
                     if "attack" in aod and turn1==True:
                         print("you took the opportunity to try & stab him in the gut")
                         atkq=random.randint(1,2)
@@ -308,7 +308,8 @@ while notno==True:
                             bhealth=bhealth-sdamage
                             print(f"his blade sunk deep into the log you were using to shield yourself, & as he tried to pull it free you pushed him to the ground & went in for a stab, dealing {sdamage}")
                     elif bhealth<=0:
-                        break           
+                        boss=False
+                        break            
             #BOSSFIGHT END - ISSAC'S TASK
             #END OF GAME
    
