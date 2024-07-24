@@ -313,14 +313,3 @@ while notno==True:
             #BOSSFIGHT END - ISSAC'S TASK
             #END OF GAME
    
-
-
-echo = getenemy()
-print(f"As you walk there appears a {random.choice(DES)} looking {echo}")
-while "Bat" in echo:
-    print("placeholder")
-while "Chamois" in echo:
-    print("placeholder")
-while "Wolf" in echo:
-    print("placeholder")
-    
